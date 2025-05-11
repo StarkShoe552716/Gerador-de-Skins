@@ -8,7 +8,7 @@ Ainda estou trabalhando nele e pensando em novos recursos que poderia adicionar.
 
 ## Tela Principal  
 
-<img src="app/.0_0/Tela.png" alt="Tela Principal" width="400">  
+<img src="app/.0_0/Tela.png" alt="Tela Principal" width="200">  
 
 Esta imagem mostra a tela padrão onde tudo acontece.  
 Nela, há três botões principais:  
@@ -20,7 +20,7 @@ Nela, há três botões principais:
 
 ## Configurações (Engrenagem)  
 
-<img src="app/.0_0/Tela com o painel a mostra.png" alt="Painel de Configurações" width="400">  
+<img src="app/.0_0/Tela com o painel a mostra.png" alt="Painel de Configurações" width="200">  
 
 A engrenagem abre um painel com algumas opções de customização, incluindo:  
 
@@ -39,7 +39,7 @@ Ao pressionar o botão **"Adicionar Skins"**, você será direcionado para um ge
 
 As skins podem ficar empilhadas, como mostrado na imagem abaixo:  
 
-<img src="app/.0_0/Skins foto.png" alt="Skins Empilhadas" width="400">  
+<img src="app/.0_0/Skins foto.png" alt="Skins Empilhadas" width="200">  
 
 Na imagem, é possível notar que há a opção de mudar de **'Slim'** para **'Normal'**.  
 Também é possível definir:  
