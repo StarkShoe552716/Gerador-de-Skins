@@ -4,10 +4,10 @@ Ele é um gerador de pacotes de skins simples que, para mim, tem sido o mais fun
 Ainda estou trabalhando nele e pensando em outros recursos que poderia adicionar.
 
 
+<img src="app/.0_0/Tela.png" alt="Descrição da imagem" width="260">
 
-<div style="display: flex; align-items: center;">
-    <img src="app/.0_0/Tela.png" alt="Descrição da imagem" width="300">
-    <p style="margin-left: 20px;">Aqui está o texto ao lado da imagem. Você pode escrever o que quiser nesta área e ajustar o espaçamento conforme necessário.</p>
-</div>
+Esta imagem mostra a tela padrão onde tudo acontece.
+Nela, há três botões: uma engrenagem e dois botões verdes com os textos 'Adicionar Skin' e 'Concluir' (sendo este o maior botão).
 
-
+Vamos começar por partes: a engrenagem!
+<img src="app/.0_0/Tela com o painel a mostra.png" alt="Descrição da imagem" width="260">
