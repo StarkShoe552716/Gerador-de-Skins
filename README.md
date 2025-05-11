@@ -31,4 +31,4 @@ No celular, ao pressionar o botão, você será direcionado para um gerenciador 
 
 As skins podem ficar empilhadas, como mostrado na imagem, por exemplo.
 
-<img src="app/.0_0/Tela.png" alt="000" width="260">
+<img src="app/.0_0/Skins foto.png" alt="000" width="260">
