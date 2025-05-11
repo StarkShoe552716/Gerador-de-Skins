@@ -21,3 +21,5 @@ Vamos começar por partes: a engrenagem!
   - **Nome:** Nome do pacote dentro do jogo.  
   - **Descrição:** Texto descritivo do pacote (sem utilidade e possivelmente removido futuramente).  
 - **Skins:** Ainda incompleto.  
+
+<hr>
