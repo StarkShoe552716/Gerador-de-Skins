@@ -10,4 +10,6 @@ Esta imagem mostra a tela padrão onde tudo acontece.
 Nela, há três botões: uma engrenagem e dois botões verdes com os textos 'Adicionar Skin' e 'Concluir' (sendo este o maior botão).
 
 Vamos começar por partes: a engrenagem!
+
+
 <img src="app/.0_0/Tela com o painel a mostra.png" alt="Descrição da imagem" width="260">
