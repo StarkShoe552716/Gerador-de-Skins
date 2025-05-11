@@ -33,4 +33,6 @@ As skins podem ficar empilhadas, como mostrado na imagem, por exemplo.
 
 <img src="app/.0_0/Skins foto.png" alt="000" width="260">
 
-Na imagem, é possível notar que há a opção de mudar de 'Slim' para 'Normal'. Também é possível definir o nome do arquivo PNG, o nome de localização do arquivo no JSON e o nome que será exibido no jogo.
+Na imagem, é possível notar que há a opção de mudar de 'Slim' para 'Normal'.
+Também é possível definir o nome do arquivo PNG, o nome de localização do da skin no JSON e o nome que será exibido no jogo.
+Além disso, cada skin terá um botão para apagá-la especificamente.
