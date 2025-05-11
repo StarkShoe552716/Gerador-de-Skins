@@ -5,4 +5,4 @@ Ainda estou trabalhando nele e pensando em outros recursos que poderia adicionar
 
 
 
-![Descrição da imagem](app/.0_0/Tela.png)
+<img src="app/.0_0/Tela.png" alt="Descrição da imagem" width="300">
