@@ -32,3 +32,5 @@ No celular, ao pressionar o botão, você será direcionado para um gerenciador 
 As skins podem ficar empilhadas, como mostrado na imagem, por exemplo.
 
 <img src="app/.0_0/Skins foto.png" alt="000" width="260">
+
+Na imagem, é possível notar que há a opção de mudar de 'Slim' para 'Normal'. Também é possível definir o nome do arquivo PNG, o nome de localização do arquivo no JSON e o nome que será exibido no jogo.
