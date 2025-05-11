@@ -13,3 +13,11 @@ Vamos começar por partes: a engrenagem!
 
 
 <img src="app/.0_0/Tela com o painel a mostra.png" alt="Descrição da imagem" width="260">
+
+**A engrenagem abre um painel com algumas opções de customização, incluindo:**  
+- **Linguagem:** Define o idioma do arquivo `lang`.  
+- **Manifesto:** Contém informações sobre o pacote.  
+  - **Autor:** Meu nick do Minecraft.  
+  - **Nome:** Nome do pacote dentro do jogo.  
+  - **Descrição:** Texto descritivo do pacote (sem utilidade e possivelmente removido futuramente).  
+- **Skins:** Ainda incompleto.  
