@@ -1,42 +1,58 @@
-# Gerador-de-Skins
-<hr>
-Este é um projeto no qual tenho trabalhado há algum tempo no meu celular.
-Ele é um gerador de pacotes de skins simples que, para mim, tem sido o mais funcional e intuitivo.
-Ainda estou trabalhando nele e pensando em outros recursos que poderia adicionar.
+# Gerador de Skins  
 
+Este é um projeto no qual tenho trabalhado há algum tempo no meu celular.  
+Ele é um gerador de pacotes de skins simples que, para mim, tem sido o mais funcional e intuitivo.  
+Ainda estou trabalhando nele e pensando em novos recursos que poderia adicionar.  
 
-<img src="app/.0_0/Tela.png" alt="000" width="260">
+---
 
-Esta imagem mostra a tela padrão onde tudo acontece.
-Nela, há três botões: uma engrenagem e dois botões verdes com os textos 'Adicionar Skin' e 'Concluir' (sendo este o maior botão).
+## Tela Principal  
 
-Vamos começar por partes: a engrenagem!
+<img src="app/.0_0/Tela.png" alt="Tela Principal" width="400">  
 
+Esta imagem mostra a tela padrão onde tudo acontece.  
+Nela, há três botões principais:  
+- **Engrenagem** – Configurações do pacote  
+- **Adicionar Skin** – Importar skins para o pacote  
+- **Concluir** – Finalizar e baixar o pacote  
 
-<img src="app/.0_0/Tela com o painel a mostra.png" alt="000" width="260">
+---
 
-**A engrenagem abre um painel com algumas opções de customização, incluindo:**  
+## Configurações (Engrenagem)  
+
+<img src="app/.0_0/Tela com o painel a mostra.png" alt="Painel de Configurações" width="400">  
+
+A engrenagem abre um painel com algumas opções de customização, incluindo:  
+
 - **Linguagem:** Define o idioma do arquivo `lang`.  
-- **Manifesto:** Contém informações sobre o pacote.  
+- **Manifesto:** Contém informações sobre o pacote:  
   - **Autor:** Meu nick do Minecraft.  
   - **Nome:** Nome do pacote dentro do jogo.  
   - **Descrição:** Texto descritivo do pacote (sem utilidade e possivelmente removido futuramente).  
 - **Skins:** Ainda incompleto.  
 
-<hr>
+---
 
-Voltando ao menu: Botão 'Adicionar Skins'!
+## Adicionando Skins  
 
-No celular, ao pressionar o botão, você será direcionado para um gerenciador de arquivos ou um aplicativo de fotos, onde poderá procurar suas skins e adicioná-las.
+Ao pressionar o botão **"Adicionar Skins"**, você será direcionado para um gerenciador de arquivos ou um aplicativo de fotos, onde poderá procurar suas skins e adicioná-las.  
 
-As skins podem ficar empilhadas, como mostrado na imagem, por exemplo.
+As skins podem ficar empilhadas, como mostrado na imagem abaixo:  
 
-<img src="app/.0_0/Skins foto.png" alt="000" width="260">
+<img src="app/.0_0/Skins foto.png" alt="Skins Empilhadas" width="400">  
 
-Na imagem, é possível notar que há a opção de mudar de 'Slim' para 'Normal'.
-Também é possível definir o nome do arquivo PNG, o nome de localização do da skin no JSON e o nome que será exibido no jogo.
-Além disso, cada skin terá um botão para apagá-la especificamente.
+Na imagem, é possível notar que há a opção de mudar de **'Slim'** para **'Normal'**.  
+Também é possível definir:  
+- **Nome do arquivo PNG**  
+- **Localização da skin no JSON**  
+- **Nome que será exibido no jogo**  
 
-E, por último, o botão 'Concluir!
+Além disso, cada skin terá um botão para apagá-la especificamente.  
 
-É bem simples: ao terminar, basta apertar o botão 'Concluir', e o pacote será gerado e baixado como `skin_pack.mcpack.zip`.
+---
+
+## Finalizando o Pacote  
+
+Por fim, ao pressionar o botão **"Concluir"**, o pacote será gerado e baixado como:  
+
+skin_pack.mcpack.zip
