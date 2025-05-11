@@ -28,6 +28,7 @@ Vamos começar por partes: a engrenagem!
 Voltando ao menu: Botão 'Adicionar Skins'!
 
 No celular, ao pressionar o botão, você será direcionado para um gerenciador de arquivos ou um aplicativo de fotos, onde poderá procurar suas skins e adicioná-las.
+
 As skins podem ficar empilhadas, como mostrado na imagem, por exemplo.
 
 <img src="app/.0_0/Tela.png" alt="000" width="260">
