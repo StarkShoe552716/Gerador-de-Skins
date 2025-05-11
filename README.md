@@ -25,8 +25,7 @@ Vamos começar por partes: a engrenagem!
 
 <hr>
 
-voltando ao menu: botão Adicionar Skins!
+Voltando ao menu: Botão 'Adicionar Skins'!
 
-no celular quando apertado aparecera uma tela
-
+No celular, ao ser pressionado, uma tela aparecerá.
 
