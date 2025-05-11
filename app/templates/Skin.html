@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="PointyFour">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5B7E71">
+
+    <link rel="icon" href="{{ url_for('static', filename='imagens/favicon.ico') }}" type="image/x-icon">
+    <title>Gerador de MCpack de Skins</title>
+
+    <style>
+        @font-face {
+            font-family: 'Boonbo';
+            src: url('static/fonts/Boonbo.ttf') format('truetype');
+           }
+
+        body {
+            font-family: 'arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        h1 {
+            color: #111;
+        }
+
+        .bonbon {
+            font-family: 'boonbo', sans-serif;
+        }
+        button, input[type="submit"] {
+            background-color: #5B7E71;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        button:hover, input[type="submit"]:hover {
+            background-color: #5B7E71;
+        }
+        #skinsContainer {
+            margin-top: 20px;
+        }
+        .skin-entry {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.5s ease, transform 0.3s ease;
+        }
+        img {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            margin: 5px;
+            padding: 5px;
+            width: 90%;
+        }
+        .remove-btn {
+            background-color: #FF3B30;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .remove-btn:hover {
+            background-color: #D32F2F;
+        }
+        #settingsButton {
+            position: fixed;
+            top: -10px;
+            left: -17px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        #settingsButton img {
+            width: 32px;
+            height: 32px;
+        }
+        #settingsPanel {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 10px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            min-height: 300px;
+            z-index: 1000;
+            width: 300px;
+            text-align: left;
+        }
+        #settingsPanel p {
+            margin: 10px 0;
+        }
+        #settingsPanel button {
+            background-color: #5B7E71;
+            color: white;
+            padding: 5px 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #settingsPanel button:hover {
+            background-color: #5B7E71;
+        }
+       #settingsButton,
+       #settingsButton img {
+    -webkit-tap-highlight-color: transparent;
+       }
+       #closeSettings {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #FF3B30;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#closeSettings:hover {
+    background-color: #D32F2F;
+       }
+#conf {
+    position: absolute;
+    top: -7px;
+    right: 116px;
+       }
+    </style>
+</head>
+<body>
+
+    <button id="settingsButton">
+        <img src="{{ url_for('static', filename='imagens/icone.png') }}" alt="Configurações">
+    </button>
+
+    <div id="settingsPanel">
+        <p id="conf">Configurações</p>
+        
+        <hr>
+
+        <p><strong>Geral:</strong></p>
+        <p>
+           Lang:
+        <select name="lang" id="langSelect" style="width: 33%;">
+         <option value="pt_br" selected>Português</option>
+         <option value="en_US">Inglês</option>
+         <option value="es_MX">Espanhol</option>
+         <option value="fr_FR">Francês</option>
+         <option value="de_DE">Alemão</option>
+         <option value="it_IT">Italiano</option>
+        </select>
+        </p>
+        <hr>
+        <p><strong>Manifesto:</strong></p>
+        <p>
+    Autor:
+    <input type="text" name="manifestAuthor" id="manifestAuthorInput" value="PointyFour" readonly style="width: 23%;">
+</p>
+        <p>
+            Nome:
+            <input type="text" name="manifestName" value="Custom skin pack" style="width: 53%;">
+        </p>
+        <p>
+           Descrição:
+            <input type="text" name="manifestDescription" value="Pacote de skins gerado automaticamente." style="width: 70%;">
+        </p>
+        <hr>
+        <p><strong>Skins:</strong></p>
+        
+        <button id="closeSettings">Fechar</button>
+    </div>
+
+    <h1 class="bonbon">Gerador de MCpack de Skins</h1>
+    <button id="addSkinsBtn">Adicionar Skins</button>
+
+    <form id="skinsForm" action="/generate" method="post" enctype="multipart/form-data">
+        <div id="skinsContainer"></div>
+        <input type="submit" value="Concluir" id="submitBtn">
+        <input type="hidden" name="manifestName" id="manifestNameInput" value="Custom skin pack">
+        <input type="hidden" name="manifestDescription" id="manifestDescriptionInput" value="Pacote de skins gerado automaticamente.">
+        <input type="hidden" name="lang" id="langInput" value="pt_br">
+        <input type="hidden" name="manifestAuthor" id="hiddenManifestAuthor" value="PointyFour">
+    </form>
+
+    <script>
+        document.getElementById('addSkinsBtn').addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/png';
+            input.multiple = false;
+            input.onchange = () => handleFile(input.files[0]);
+            input.click();
+        });
+
+        function handleFile(file) {
+            if (!file) {
+                alert("Erro: Nenhum arquivo de skin foi selecionado!");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const div = document.createElement('div');
+                div.classList.add('skin-entry');
+
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                div.appendChild(img);
+
+                const fields = ['geometry', 'name', 'location', 'display_name'];
+                const labels = ['Geometria:', 'Nome:', 'Nome de localização:', 'Nome mostrado:'];
+
+                fields.forEach((field, i) => {
+                    const wrapper = document.createElement('div');
+                    const label = document.createElement('label');
+                    label.innerText = labels[i];
+
+                    const input = document.createElement(field === 'geometry' ? 'select' : 'input');
+                    input.name = field;
+
+                    if (field === 'geometry') {
+                        ['Slim', 'Normal'].forEach(opt => {
+                            const option = document.createElement('option');
+                            option.value = opt.toLowerCase();
+                            option.innerText = opt;
+                            input.appendChild(option);
+                        });
+                    } else {
+                        input.type = 'text';
+                    }
+
+                    wrapper.appendChild(label);
+                    wrapper.appendChild(input);
+                    div.appendChild(wrapper);
+                });
+
+                const fileInput = document.createElement('input');
+                fileInput.type = 'file';
+                fileInput.name = 'skins';
+                fileInput.style.display = 'none';
+
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                fileInput.files = dataTransfer.files;
+                
+                div.appendChild(fileInput);
+
+                const removeBtn = document.createElement('button');
+                removeBtn.classList.add('remove-btn');
+                removeBtn.innerText = "Remover";
+                removeBtn.onclick = () => div.remove();
+                div.appendChild(removeBtn);
+
+                document.getElementById('skinsContainer').appendChild(div);
+
+                setTimeout(() => {
+                    div.style.opacity = "1";
+                    div.style.transform = "scale(1)";
+                }, 100);
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        document.getElementById('skinsForm').addEventListener('submit', (e) => {
+            const skinEntries = document.querySelectorAll('.skin-entry');
+            if (skinEntries.length === 0) {
+                e.preventDefault();
+                alert("Adicione pelo menos uma skin antes de concluir!");
+            }
+        });
+
+        document.getElementById('settingsButton').addEventListener('click', () => {
+            const panel = document.getElementById('settingsPanel');
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.getElementById('closeSettings').addEventListener('click', () => {
+            document.getElementById('settingsPanel').style.display = 'none';
+        });
+
+document.getElementById('skinsForm').addEventListener('submit', (e) => {
+    const manifestNameField = document.getElementById('manifestNameInput');
+    const settingsNameField = document.querySelector('input[name="manifestName"]');
+    const manifestDescField = document.getElementById('manifestDescriptionInput');
+    const settingsDescField = document.querySelector('input[name="manifestDescription"]');
+    const langSelect = document.getElementById('langSelect');
+    const langInput = document.getElementById('langInput');
+    const manifestAuthorField = document.getElementById('manifestAuthorInput');
+    const hiddenAuthorField = document.getElementById('hiddenManifestAuthor');
+
+    if (settingsNameField) {
+        manifestNameField.value = settingsNameField.value;
+    }
+    if (settingsDescField) {
+        manifestDescField.value = settingsDescField.value;
+    }
+    if (langSelect && langInput) {
+        langInput.value = langSelect.value;
+    }
+    if (manifestAuthorField && hiddenAuthorField) {
+        hiddenAuthorField.value = manifestAuthorField.value;
+    }
+});
+    </script>
+
+</body>
+</html>
